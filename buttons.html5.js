@@ -611,13 +611,14 @@
     "xl/styles.xml":
       '<?xml version="1.0" encoding="UTF-8"?>' +
       '<styleSheet xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="x14ac" xmlns:x14ac="http://schemas.microsoft.com/office/spreadsheetml/2009/9/ac">' +
-      '<numFmts count="6">' +
+      '<numFmts count="7">' +
       '<numFmt numFmtId="164" formatCode="#,##0.00_- [$$-45C]"/>' +
       '<numFmt numFmtId="165" formatCode="&quot;£&quot;#,##0.00"/>' +
       '<numFmt numFmtId="166" formatCode="[$€-2] #,##0.00"/>' +
       '<numFmt numFmtId="167" formatCode="0.0%"/>' +
       '<numFmt numFmtId="168" formatCode="#,##0;(#,##0)"/>' +
       '<numFmt numFmtId="169" formatCode="#,##0.00;(#,##0.00)"/>' +
+      '<numFmt numFmtId="170" formatCode="Rp* #,##0"/>' +
       "</numFmts>" +
       '<fonts count="5" x14ac:knownFonts="1">' +
       "<font>" +
@@ -704,7 +705,7 @@
       '<cellStyleXfs count="1">' +
       '<xf numFmtId="0" fontId="0" fillId="0" borderId="0" />' +
       "</cellStyleXfs>" +
-      '<cellXfs count="68">' +
+      '<cellXfs count="69">' +
       '<xf numFmtId="0" fontId="0" fillId="0" borderId="0" applyFont="1" applyFill="1" applyBorder="1"/>' +
       '<xf numFmtId="0" fontId="1" fillId="0" borderId="0" applyFont="1" applyFill="1" applyBorder="1"/>' +
       '<xf numFmtId="0" fontId="2" fillId="0" borderId="0" applyFont="1" applyFill="1" applyBorder="1"/>' +
@@ -785,6 +786,7 @@
       '<xf numFmtId="1" fontId="0" fillId="0" borderId="0" applyFont="1" applyFill="1" applyBorder="1" xfId="0" applyNumberFormat="1"/>' +
       '<xf numFmtId="2" fontId="0" fillId="0" borderId="0" applyFont="1" applyFill="1" applyBorder="1" xfId="0" applyNumberFormat="1"/>' +
       '<xf numFmtId="14" fontId="0" fillId="0" borderId="0" applyFont="1" applyFill="1" applyBorder="1" xfId="0" applyNumberFormat="1"/>' +
+      '<xf numFmtId="170" fontId="0" fillId="0" borderId="0" xfId="0" applyFont="1" applyFill="1" applyBorder="1" applyAlignment="1"></xf>' +
       "</cellXfs>" +
       '<cellStyles count="1">' +
       '<cellStyle name="Normal" xfId="0" builtinId="0" />' +
@@ -843,6 +845,7 @@
         return Math.round(25569 + Date.parse(d) / (86400 * 1000));
       },
     }, //Date yyyy-mm-dd
+    { match: /^\-?\[\d.]+.?\d/, style: 68 }, // Rupiah
   ];
 
   /* * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
